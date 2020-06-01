@@ -1,0 +1,59 @@
+﻿信息系统与数据库技术练习13答题卡
+
+班级：信息管理2班
+姓名：黄家福
+学号：20190307227
+
+*注：排除答案放置在序号下方。* /
+
+（一）
+1。
+使用项目
+
+
+2。
+创建索引ix_project
+在项目上（Pname DESC）
+
+
+3。
+创建索引ix_date
+在员工身上（Esex DESC，WorkDate ASC）
+
+
+
+4。
+创建唯一索引ix_sale
+开售（中，年，月）
+
+
+5，
+创建视图v_wages
+与模式绑定
+如
+SELECT Department.Did，Dname，Employee.Eid，Ename，WorkDate，EP.Pid，Pname，Wages
+从dbo。部门JOIN dbo。雇员JOIN dbo.EP JOIN dbo.Project
+ON Project.Pid = EP.Pid
+ON Employee.Eid = EP.Eid
+开启Department.Did = Employee.Did
+
+
+6。
+创建唯一的聚集索引ix_wagex
+开启v_wages（Eid，Pid）
+
+7。
+EXEC sp_helpindex员工
+
+8。
+EXEC sp_rename'v_wages.ix_workDate'，ix_Date
+
+9。
+EXEC sp_helpindex v_wages
+
+10。
+DROP INDEX ix_project ON项目
+
+11。
+ALTER INDEX ix_sale发售中重新组织
+
